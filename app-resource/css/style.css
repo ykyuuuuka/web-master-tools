@@ -1,0 +1,118 @@
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ', 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'Yu Gothic Medium', Meiryo, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 0.88rem;
+	/*text-align: justify;*/
+	line-height: 1.6
+}
+.origin-font {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+.side-bar {
+	background-color: #FFA901;
+	position: fixed;
+	height: 100%;
+	width: 280px;
+	z-index: 9999;
+}
+.side-bar-head {
+	width: 100%;
+	padding: 30px 0 0 40px;
+}
+.side-bar-head .origin-font {
+	font-size: 24px;
+}
+.side-bar-head a:hover {
+	text-decoration: none;
+}
+.side-bar-body {
+	padding: 30px 20px 0 40px;
+}
+.side-bar-body .btn {
+	text-align: left;
+	position: relative;
+	padding-left: 45px;
+}
+.side-bar-body .btn.active {
+	background-color: #FFFFFF;
+	color: #FFA901 !important;
+}
+.side-bar-body .btn.active:hover {
+	background-color: #FFFFFF;
+	color: #FFA901 !important;
+}
+.side-bar-body .btn:hover {
+	background: rgba(25, 25, 25, 0.2);
+	color: #DEEBFF;
+}
+.side-bar-body .zmdi {
+	position: absolute;
+	font-size: 20px;
+	top: 8px;
+	left: 14px;
+}
+main {
+	margin-left: 280px;
+}
+.contents {
+	width: 100%;
+	max-width: 920px;
+	min-width: 680px;
+	margin: 0 auto;
+	padding: 34px 20px 20px 20px;
+}
+.form-control {
+	background-color: #fafbfc;
+	border: 2px solid #dfe1e6;
+}
+.alert {
+	font-size: 14px;
+}
+.alert-dismissible .close {
+	padding: .5rem 1.25rem;
+}
+.card-header {
+	padding: 0.35rem 0.9rem;
+}
+.card-header .btn .badge {
+	padding: 4px 7px;
+	font-size: 90%;
+}
+.card-body {
+	padding: 0.9rem 0.9rem;
+}
+.btn-dark {
+	background-color: #505F79;
+}
+.seo_issue_list_menu {
+	min-width: 200px;
+	padding-left: 13px;
+	border-left: 1px solid #eee;
+	list-style-type: none;
+	color: #99979c;
+	position: fixed;
+}
+.seo_issue_list_menu li a {
+	display: block;
+	padding: 5px 0;
+	color: #99979c;
+}
+.seo_issue_list_menu li a:hover {
+	color: #007bff;
+	text-decoration: none;
+}
+.seo_issue_list_menu li a .badge {
+	position: absolute;
+	margin: 3px 0 0 5px;
+	padding: .2em .6em .2em .6em;
+}
+.modal-header .close {
+	margin: -8px -16px -8px 0px;
+	padding: 13px 16px 10px 12px;
+}
+
+
+
+
