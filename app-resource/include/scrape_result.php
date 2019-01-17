@@ -10,7 +10,7 @@
 	// $card_info = $_POST['card_info'];
 	//ダミーデーター
 	$card_info = array(
-		'http://tsubuyaki.m-yossy.com/wp-content/uploads/2018/04/yuri-230x300.jpg',
+		'',
 		'url',
 		'100ページくらい',
 		'10分くらい'
@@ -19,11 +19,11 @@
 	// $scrape_info = $_POST['scrape_info'];
 	//ダミーデーター
 	$scrape_info = array(
-		'https://www.imjp.co.jp',
-		'/works/',
-		'https://www.imjp.co.jp/works/',
+		'https://www.nomura.co.jp',
+		'/el_borde/',
+		'https://www.nomura.co.jp/el_borde/',
 		'',
-		'https://www.imjp.co.jp/works/',
+		'https://www.nomura.co.jp/el_borde/',
 		'',
 		'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100',
 		'utf-8',
@@ -96,11 +96,11 @@ EOD;
 	PageScrape::scrape_roop($config, $scrape_array);
 
 	//デバッグ用echo
-	// echo '<pre>';
-	// var_dump($config->_array_unopen);
-	// var_dump($config->_array_open);
-	// var_dump($config->_array_result);
-	// echo '</pre>';
+	echo '<pre>';
+	// var_dump($scrape_array->_array_unopen);
+	// var_dump($scrape_array->_array_open);
+	var_dump($scrape_array->_array_result);
+	echo '</pre>';
 
 	//セッションに配列を保存（じゃあもう値は全部セッション管理にした方がいいのでは）
 	$_SESSION['result_array'] = $scrape_array->_array_result;
