@@ -66,7 +66,9 @@
 		$doc = phpQuery::newDocument(mb_convert_encoding($data, 'HTML-ENTITIES', 'utf8')); 
 		$doc_val = $doc['#inf']->text();
 		preg_match("/(約)(.*?)(件)/", $doc_val, $result);
-		return $result[2];
+		$result = str_replace(',', '', $result[2]);
+		$result = intval($result);
+		return $result;
 	}
 
 
@@ -143,8 +145,8 @@
 			$responce_request_url = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL); //最終的にアクセスしたURLの取得
 
 			//実行結果の評価
-			if($responce_http_status !== 200) return FALSE;
-			if(strpos($responce_request_url, $config->_target_string) === false) return FALSE;
+			// if($responce_http_status !== 200) return FALSE;
+			// if(strpos($responce_request_url, $config->_target_string) === false) return FALSE;
 
 			$doc = phpQuery::newDocument(mb_convert_encoding($response, 'HTML-ENTITIES', $config->_target_charset));
 			return $doc;

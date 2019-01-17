@@ -7,28 +7,28 @@
 	/*
 	前のページからパラメーターを受け取り
 	*/
-	$card_info = $_POST['card_info'];
+	// $card_info = $_POST['card_info'];
 	//ダミーデーター
-	// $card_info = array(
-	// 	'',
-	// 	'url',
-	// 	'100ページくらい',
-	// 	'10分くらい'
-	// );
+	$card_info = array(
+		'',
+		'url',
+		'100ページくらい',
+		'10分くらい'
+	);
 
-	$scrape_info = $_POST['scrape_info'];
+	// $scrape_info = $_POST['scrape_info'];
 	//ダミーデーター
-	// $scrape_info = array(
-	// 	'https://www.nomura.co.jp',
-	// 	'/el_borde/',
-	// 	'https://www.nomura.co.jp/el_borde/',
-	// 	'',
-	// 	'https://www.nomura.co.jp/el_borde/',
-	// 	'',
-	// 	'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100',
-	// 	'utf-8',
-	// 	0
-	// );
+	$scrape_info = array(
+		'https://www.nomura.co.jp',
+		'/el_borde/',
+		'https://www.nomura.co.jp/el_borde/',
+		'',
+		'https://www.nomura.co.jp/el_borde/',
+		'',
+		'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100',
+		'utf-8',
+		0
+	);
 
 //ヒアドキュメント開始------------------------
 echo <<<EOD
@@ -96,11 +96,11 @@ EOD;
 	PageScrape::scrape_roop($config, $scrape_array);
 
 	//デバッグ用echo
-	echo '<pre>';
+	// echo '<pre>';
 	// var_dump($scrape_array->_array_unopen);
 	// var_dump($scrape_array->_array_open);
-	var_dump($scrape_array->_array_result);
-	echo '</pre>';
+	// var_dump($scrape_array->_array_result);
+	// echo '</pre>';
 
 	//セッションに配列を保存（じゃあもう値は全部セッション管理にした方がいいのでは）
 	$_SESSION['result_array'] = $scrape_array->_array_result;

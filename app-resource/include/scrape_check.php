@@ -11,7 +11,7 @@
 					<dt class="col-sm-3">リクエストURL</dt>
 					<dd class="col-sm-9 mb-1 p-0"><?php echo $_POST['form-domain'] . $_POST['form-directory'] . $_POST['form-file']; ?></dd>
 				</dl>
-				<p class="m-0">URLのインデックス数をGoogleに問い合わせています。インデックス数が5,000件を超えていた場合、処理負荷の観点からファイルリスト生成のリクエストを拒否することがあります。</p>
+				<p class="m-0">URLのインデックス数をGoogleに問い合わせています。インデックス数が3,000件を超えていた場合、処理負荷の観点からファイルリスト生成のリクエストを拒否することがあります。</p>
 			</div>
 		</div>
 	</div>
@@ -46,7 +46,17 @@
 	$index_count = get_index_count($request_url);
 
 	//処理時間の取得
-	$load_time = '約 15 分';
+	if($index_count > 5000) {
+		$load_time = '50分以上';
+		$flag_process = '<span class="badge badge-warning">ページ数が多すぎるため処理リクエストを拒否します。</span>';
+	} else if($index_count > 3000) {
+		$load_time = '30分以上';
+		$flag_process = '<span class="badge badge-primary">処理可能です。次のステップに進んでください。</span>';
+	} else {
+		$load_time = '約15分';
+		$flag_process = '<span class="badge badge-primary">処理可能です。次のステップに進んでください。</span>';
+	}
+
 
 	$card_info = array(
 		$screenshot_src,
@@ -77,8 +87,7 @@ echo <<<EOD
 					<dt class="col-sm-3">推定処理時間</dt>
 					<dd class="col-sm-9 mb-1 p-0">$load_time</dd>
 				</dl>
-				<span class="badge badge-primary">処理可能です。次のステップに進んでください。</span>
-				<span class="badge badge-warning">ページ数が多すぎるため処理リクエストを拒否します。</span>
+				$flag_process
 			</div>
 		</div>
 	</div>
@@ -101,6 +110,12 @@ EOD;
 		}
 echo <<<EOD
 	</div>
+EOD;
+//------------------------ヒアドキュメント終了
+
+	if($index_count < 5000) {
+//ヒアドキュメント開始------------------------
+echo <<<EOD
 	<div class="form-group row mt-3">
 		<div class="col-sm-10">
 			<button type="submit" class="btn btn-primary">次の処理に進む</button>
@@ -109,10 +124,6 @@ echo <<<EOD
 </form>
 EOD;
 //------------------------ヒアドキュメント終了
-
-
-
-
-
+	}
 
 ?>

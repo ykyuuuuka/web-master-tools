@@ -30,12 +30,6 @@
 					//ルーティング処理
 					if(isset($_GET['panel'])) {
 						$panel_type = $_GET['panel'];
-						//SEOチェックアプリケーション
-						// if($panel_type == '0') include('app-resource/include/seo_form.php');
-						// if($panel_type == '0-1') include('app-resource/include/seo_issue.php');
-						// if($panel_type == '0-2') include('app-resource/include/seo_issue_page.php');
-						//404チェックアプリケーション
-						// if($panel_type == '2') include('app-resource/include/404_top.php');
 						//サイトスクレイプスプリケーション
 						if($panel_type == '5') include('app-resource/include/scrape_form.php');
 						if($panel_type == '5-1') include('app-resource/include/scrape_check.php');
