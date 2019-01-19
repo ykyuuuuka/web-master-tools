@@ -7,28 +7,8 @@
 	/*
 	前のページからパラメーターを受け取り
 	*/
-	// $card_info = $_POST['card_info'];
-	//ダミーデーター
-	$card_info = array(
-		'',
-		'url',
-		'100ページくらい',
-		'10分くらい'
-	);
-
-	// $scrape_info = $_POST['scrape_info'];
-	//ダミーデーター
-	$scrape_info = array(
-		'https://www.nomura.co.jp',
-		'/el_borde/',
-		'https://www.nomura.co.jp/el_borde/',
-		'',
-		'https://www.nomura.co.jp/el_borde/',
-		'',
-		'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100',
-		'utf-8',
-		0
-	);
+	$card_info = $_POST['card_info'];
+	$scrape_info = $_POST['scrape_info'];
 
 //ヒアドキュメント開始------------------------
 echo <<<EOD
@@ -90,6 +70,7 @@ EOD;
 	$array_result = $array_href;
 	array_push($array_open, $config->_target_url);
 
+
 	//結果が格納される配列クラスのセットアップ
 	$scrape_array = new ScrapeArray();
 	$scrape_array->set_array($array_unopen, $array_open, $array_result);
@@ -100,11 +81,12 @@ EOD;
 	// var_dump($scrape_array->_array_unopen);
 	// var_dump($scrape_array->_array_open);
 	// var_dump($scrape_array->_array_result);
+	// var_dump($array_result);
 	// echo '</pre>';
 
 	//セッションに配列を保存（じゃあもう値は全部セッション管理にした方がいいのでは）
 	$_SESSION['result_array'] = $scrape_array->_array_result;
-	$_SESSION['config'] = $config;
+	$_SESSION['config'] = $scrape_info;
 	echo '<style>.fade-1{display:none;}</style>';
 
 

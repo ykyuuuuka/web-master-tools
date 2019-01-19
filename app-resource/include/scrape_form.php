@@ -65,8 +65,8 @@
 		<label class="col-sm-3 col-form-label">パラメーター付きURL</label>
 		<div class="col-sm-4">
 			<select class="form-control" name="form-check_type">
-				<option value="0">カウントしない</option>
-				<option value="1">カウントする</option>
+				<option value="off">カウントしない</option>
+				<option value="on">カウントする</option>
 			</select>
 			<p class="pr-2 m-0 pt-1 small text-muted">ファイル名が同じでも違うパラメーターが割り振られているケースで、パラメーターが違えば違うページとみなす場合に「カウントする」を選択してください。</p>
 		</div>

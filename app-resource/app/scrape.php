@@ -167,7 +167,7 @@
 				if(UrlCheck::path_target_check($config, $path_absolute) === FALSE) continue;
 
 				//パラメーター付きURLを含めるかどうかの分岐
-				if($config->_target_check_type === 0) {
+				if($config->_target_check_type === 'off') {
 					//パラメーター付きURLは含めない場合
 					$arr = parse_url($path_absolute);
 					$path_absolute = $arr['scheme'] . '://' . $arr['host'] . $arr['path'];
