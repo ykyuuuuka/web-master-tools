@@ -200,7 +200,7 @@ echo <<<EOD
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="card-body">
-				<p class="m-0">全ての処理が終了しました。<br>ダウンロードボックスにダウンロードされたCSVファイルを確認してください。</p>
+				<p class="m-0">全ての処理が終了しました。<br><a href="/test.csv">こちら</a>からCSVファイルをダウンロードいただけます。</p>
 			</div>
 		</div>
 	</div>
