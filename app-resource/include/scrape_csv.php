@@ -25,6 +25,10 @@
 	$config = new Config();
 	$config->set_config($scrape_info);
 
+	echo '<pre>';
+	var_dump($scrape_info);
+	echo '</pre>';
+
 	//画面描画の実施
 	@ob_flush();
 	@flush();
@@ -186,8 +190,13 @@
 	define('CSV_DELIMITER', ',');
 	define('CSV_ENCLOSURE', '"');
 
+	//ファイル名にタイムスタンプを残す
+	$timestamp = time();
+	$timestamp = date('Ymd' ,$timestamp);
+	$filename = 'filelist_'.$timestamp.'.csv';
+
 	//csv化
-	$f = fopen('test.csv', 'w');
+	$f = fopen($filename, 'w');
 	foreach ($filelist_csv as $row) {
 		fputcsv($f, $row, CSV_DELIMITER, CSV_ENCLOSURE);
 	}
@@ -201,6 +210,8 @@ echo <<<EOD
 		<div class="col-sm-12">
 			<div class="card-body">
 				<p class="m-0">全ての処理が終了しました。<br><a href="/test.csv">こちら</a>からCSVファイルをダウンロードいただけます。</p>
+				<br>
+				<p class="m-0">ダウロードファイルはWindowsのExcelで開くと文字化けするケースがあります。事象が再現された場合は、プリインストールされている「メモ帳」でcsvファイルを展開し、上書き保存を行うことで解消されます。</p>
 			</div>
 		</div>
 	</div>

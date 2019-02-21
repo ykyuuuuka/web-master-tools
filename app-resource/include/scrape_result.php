@@ -92,7 +92,7 @@ EOD;
 
 //ヒアドキュメント開始------------------------
 echo <<<EOD
-	<a href="/index.php/?panel=5-3" class="btn btn-primary">ファイルリストを出力</a>
+	<a href="/index.php/?panel=5-3" class="btn btn-primary mt-3">ファイルリストを出力</a>
 EOD;
 //------------------------ヒアドキュメント終了
 
