@@ -41,6 +41,7 @@ echo <<<EOD
 		<div class="col-sm-8 pl-0">
 			<div class="card-body pt-2 pr-2 pb-2 pl-0">
 				<p>処理プロセス中</p>
+				<p>Herokuサーバーのセッション時間は30秒が上限のため、この処理に30秒以上かかる場合、プロセスは強制終了します。</p>
 			</div>
 		</div>
 	</div>
