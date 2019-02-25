@@ -134,7 +134,6 @@
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); //値返却を拒否
 			if($config->_target_auth !== '') {
 				//Auth認証が必要な場合
-				echo 'Auth認証用のロジックを通ってる';
 				curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_DIGEST);
 				curl_setopt($ch, CURLOPT_USERPWD, $config->_target_auth);
 			}
