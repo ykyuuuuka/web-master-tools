@@ -25,10 +25,6 @@
 	$config = new Config();
 	$config->set_config($scrape_info);
 
-	echo '<pre>';
-	var_dump($scrape_info);
-	echo '</pre>';
-
 	//画面描画の実施
 	@ob_flush();
 	@flush();
@@ -209,7 +205,7 @@ echo <<<EOD
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="card-body">
-				<p class="m-0">全ての処理が終了しました。<br><a href="/test.csv">こちら</a>からCSVファイルをダウンロードいただけます。</p>
+				<p class="m-0">全ての処理が終了しました。<br><a href="/$filename">こちら</a>からCSVファイルをダウンロードいただけます。</p>
 				<br>
 				<p class="m-0">ダウロードファイルはWindowsのExcelで開くと文字化けするケースがあります。事象が再現された場合は、プリインストールされている「メモ帳」でcsvファイルを展開し、上書き保存を行うことで解消されます。</p>
 			</div>
