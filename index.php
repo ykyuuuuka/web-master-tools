@@ -30,7 +30,7 @@
 					//ルーティング処理
 					if(isset($_GET['panel'])) {
 						$panel_type = $_GET['panel'];
-						//サイトスクレイプスプリケーション
+						//サイトスクレイプアプリケーション
 						if($panel_type == '5') include('app-resource/include/scrape_form.php');
 						if($panel_type == '5-1') include('app-resource/include/scrape_check.php');
 						if($panel_type == '5-2') include('app-resource/include/scrape_result.php');
