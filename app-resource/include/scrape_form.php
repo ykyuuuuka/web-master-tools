@@ -74,7 +74,7 @@
 
 	<div class="form-group row">
 		<div class="col-sm-10">
-			<button type="submit" class="btn btn-primary">ファイルリストを生成する</button>
+			<button type="submit" class="btn btn-primary">ページ規模を確認</button>
 		</div>
 	</div>
 

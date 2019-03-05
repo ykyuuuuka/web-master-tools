@@ -110,7 +110,7 @@ EOD;
 echo <<<EOD
 	<div class="form-group row mt-3">
 		<div class="col-sm-10">
-			<button type="submit" class="btn btn-primary">次の処理に進む</button>
+			<button type="submit" class="btn btn-primary">ファイルリストを生成する</button>
 		</div>
 	</div>
 </form>
