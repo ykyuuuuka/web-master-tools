@@ -25,8 +25,6 @@ echo <<<EOD
 					<dd class="col-sm-9 mb-1 p-0">$card_info[1]</dd>
 					<dt class="col-sm-3">推定ページ数</dt>
 					<dd class="col-sm-9 mb-1 p-0">約 $card_info[2] ページ</dd>
-					<dt class="col-sm-3">推定処理時間</dt>
-					<dd class="col-sm-9 mb-1 p-0">$card_info[3]</dd>
 				</dl>
 			</div>
 		</div>

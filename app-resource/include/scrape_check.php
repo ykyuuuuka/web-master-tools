@@ -11,7 +11,7 @@
 					<dt class="col-sm-3">リクエストURL</dt>
 					<dd class="col-sm-9 mb-1 p-0"><?php echo $_POST['form-domain'] . $_POST['form-directory'] . $_POST['form-file']; ?></dd>
 				</dl>
-				<p class="m-0">URLのインデックス数をGoogleに問い合わせています。インデックス数が3,000件を超えていた場合、処理負荷の観点からファイルリスト生成のリクエストを拒否することがあります。</p>
+				<p class="m-0">URLのインデックス数をGoogleに問い合わせています。インデックス数が500件を超えていた場合、処理負荷の観点からファイルリスト生成のリクエストを拒否することがあります。</p>
 			</div>
 		</div>
 	</div>
@@ -46,14 +46,9 @@
 	$index_count = get_index_count($request_url);
 
 	//処理時間の取得
-	if($index_count > 5000) {
-		$load_time = '50分以上';
+	if($index_count > 500) {
 		$flag_process = '<span class="badge badge-warning">ページ数が多すぎるため処理リクエストを拒否します。</span>';
-	} else if($index_count > 3000) {
-		$load_time = '30分以上';
-		$flag_process = '<span class="badge badge-primary">処理可能です。次のステップに進んでください。</span>';
 	} else {
-		$load_time = '約15分';
 		$flag_process = '<span class="badge badge-primary">処理可能です。次のステップに進んでください。</span>';
 	}
 
@@ -62,7 +57,6 @@
 		$screenshot_src,
 		$target_url,
 		$index_count,
-		$load_time
 	);
 
 //ヒアドキュメント開始------------------------
@@ -84,8 +78,6 @@ echo <<<EOD
 					<dd class="col-sm-9 mb-1 p-0">$target_url</dd>
 					<dt class="col-sm-3">推定ページ数</dt>
 					<dd class="col-sm-9 mb-1 p-0">約 $index_count ページ</dd>
-					<dt class="col-sm-3">推定処理時間</dt>
-					<dd class="col-sm-9 mb-1 p-0">$load_time</dd>
 				</dl>
 				$flag_process
 			</div>
