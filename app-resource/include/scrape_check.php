@@ -113,6 +113,7 @@ echo <<<EOD
 			<button type="submit" class="btn btn-primary">ファイルリストを生成する</button>
 		</div>
 	</div>
+	<p>ウェブページ内のリンクがルート相対パス以外の形式で記述されている場合、正常に処理できません。</p>
 </form>
 EOD;
 //------------------------ヒアドキュメント終了

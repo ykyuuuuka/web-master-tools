@@ -69,7 +69,6 @@ EOD;
 	$array_result = $array_href;
 	array_push($array_open, $config->_target_url);
 
-
 	//結果が格納される配列クラスのセットアップ
 	$scrape_array = new ScrapeArray();
 	$scrape_array->set_array($array_unopen, $array_open, $array_result);
