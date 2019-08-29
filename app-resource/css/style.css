@@ -112,6 +112,11 @@ main {
 	margin: -8px -16px -8px 0px;
 	padding: 13px 16px 10px 12px;
 }
+.notice {
+	background-color: #E0004D;
+	padding: 5px 10px;
+	color: #FFFFFF;
+}
 
 
 

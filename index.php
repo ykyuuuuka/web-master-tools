@@ -1,3 +1,7 @@
+<?php
+	//セッションスタート
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -10,10 +14,10 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700">
 </head>
 <body>
-
 	<div class="wrapper">
 		<?php include('app-resource/include/header.php'); ?>
 		<main>
+			<p class="notice">現在、Chromeの一部バージョンでCookie処理に関わる問題が報告されています。恐れ入りますが、<strong>Chrome以外のブラウザでアプリケーションを実行してください。</strong></p>
 			<div class="contents">
 
 				<?php
@@ -23,9 +27,6 @@
 					//処理ファイル
 					require_once('app-resource/app/app_bundle.php');
 					require_once('app-resource/app/phpQuery-onefile.php');
-
-					//セッションスタート
-					session_start();
 
 					//ルーティング処理
 					if(isset($_GET['panel'])) {
