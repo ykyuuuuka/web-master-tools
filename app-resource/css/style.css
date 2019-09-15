@@ -1,6 +1,6 @@
 
 body {
-	font-family: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ', 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', '游ゴシック Medium', 'Yu Gothic Medium', Meiryo, sans-serif;
+	font-family: '游ゴシック Medium', 'Yu Gothic Medium', Meiryo, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 0.88rem;
@@ -10,8 +10,12 @@ body {
 .origin-font {
 	font-family: 'Roboto Condensed', sans-serif;
 }
+.origin-logo {
+	color: #2aab9f;
+}
+
 .side-bar {
-	background-color: #FFA901;
+	background-color: #f0f2f0;
 	position: fixed;
 	height: 100%;
 	width: 280px;
@@ -34,14 +38,16 @@ body {
 	text-align: left;
 	position: relative;
 	padding-left: 45px;
+	font-size: 14px;
+	font-weight: bold;
 }
 .side-bar-body .btn.active {
 	background-color: #FFFFFF;
-	color: #FFA901 !important;
+	color: #2aab9f !important;
 }
 .side-bar-body .btn.active:hover {
 	background-color: #FFFFFF;
-	color: #FFA901 !important;
+	color: #2aab9f !important;
 }
 .side-bar-body .btn:hover {
 	background: rgba(25, 25, 25, 0.2);
@@ -50,7 +56,7 @@ body {
 .side-bar-body .zmdi {
 	position: absolute;
 	font-size: 20px;
-	top: 8px;
+	top: 6px;
 	left: 14px;
 }
 main {
@@ -113,11 +119,21 @@ main {
 	padding: 13px 16px 10px 12px;
 }
 .notice {
-	background-color: #E0004D;
+	background-color: #f0f2f0;
 	padding: 5px 10px;
-	color: #FFFFFF;
+	font-size: 12px;
+	color: #000000;
 }
 
+.h4 {
+	padding-bottom: 5px;
+	border-bottom: 2px solid #e3e5e8;
+}
+
+.bg-code {
+	background-color: #f6f8fa;
+	padding: 10px;
+}
 
 
 

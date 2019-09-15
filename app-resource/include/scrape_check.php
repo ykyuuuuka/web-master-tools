@@ -117,6 +117,18 @@ echo <<<EOD
 </form>
 EOD;
 //------------------------ヒアドキュメント終了
+	} else if($request_limit == 1) {
+//ヒアドキュメント開始------------------------
+echo <<<EOD
+	<div class="form-group row mt-3">
+		<div class="col-sm-10">
+			<button type="submit" class="btn btn-primary">ファイルリストを生成する</button>
+		</div>
+	</div>
+	<p>ウェブページ内のリンクがルート相対パス以外の形式で記述されている場合、正常に処理できません。</p>
+</form>
+EOD;
+//------------------------ヒアドキュメント終了
 	}
 
 ?>
