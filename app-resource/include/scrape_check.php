@@ -105,7 +105,7 @@ echo <<<EOD
 EOD;
 //------------------------ヒアドキュメント終了
 
-	if($index_count < 5000) {
+	if($index_count < 500) {
 //ヒアドキュメント開始------------------------
 echo <<<EOD
 	<div class="form-group row mt-3">
