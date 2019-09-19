@@ -243,13 +243,19 @@
 			if(strpos($path, '.jpeg')) return FALSE;
 			if(strpos($path, '.gif')) return FALSE;
 
-			if(0 === strpos($path, '//')) {
+			//絶対パスへを絶対パスへ
+			if(0 === strpos($path, 'http') || 0 === strpos($path, '//')) {
 				return $path;
-			} else if(0 === strpos($path, '/')) {
+			}
+			//ルート相対パスへを絶対パスへ
+			if(0 === strpos($path, '/') && 0 !== strpos($path, '//')) {
 				$path_absolute = $config->_target_domain . $path;
 				return $path_absolute;
-			} else {
-				return $path;
+			}
+			//相対パスへを絶対パスへ
+			if(0 !== strpos($path, '#') || 0 !== strpos($path, 'mailto') || 0 !== strpos($path, 'tel:')) {
+				$path_absolute = $config->_target_domain .'/'. $path;
+				return $path_absolute;
 			}
 		}
 
